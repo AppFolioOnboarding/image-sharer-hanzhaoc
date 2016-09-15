@@ -46,6 +46,8 @@ GEM
       activerecord (~> 5.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    ae_page_objects (4.1.0)
+      capybara (~> 3.0)
     arel (9.0.0)
     ast (2.4.0)
     autoprefixer-rails (9.6.1)
@@ -247,6 +249,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 6.0)
   bootstrap (~> 4.3.1)
+  ae_page_objects
   byebug
   capybara
   jquery-rails
