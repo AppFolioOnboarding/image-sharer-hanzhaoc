@@ -29,8 +29,10 @@ class ImagesController < ApplicationController
 
   def check_if_image(link)
     tokens = link.split('.')
-    return false if !tokens.last
-    return false if !%w[jpeg jpg gif png].include? tokens.last
+    return false unless tokens.last
+
+    return false unless %w[jpeg jpg gif png].include? tokens.last
+
     true
   end
 end
