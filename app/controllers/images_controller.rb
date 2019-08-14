@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  def new;end
+  def new; end
 
   def create
     @image = Image.new(image_params)
@@ -30,7 +30,7 @@ class ImagesController < ApplicationController
   def check_if_image(link)
     tokens = link.split('.')
     return false if !tokens.last
-    return false !%w[jpeg jpg gif png].include? tokens.last
+    return false if !%w[jpeg jpg gif png].include? tokens.last
     true
   end
 end
