@@ -12,6 +12,9 @@
       <td><%= i.title %></td>
       <td><%= i.link %></td>
       <td><%= link_to 'Show', image_path(i) %></td>
+      <td><%= image_tag(i.link, class: "gallery_item") %></td>
     </tr>
   <% end %>
 </table>
+
+<%= link_to 'Add image', new_image_path%>

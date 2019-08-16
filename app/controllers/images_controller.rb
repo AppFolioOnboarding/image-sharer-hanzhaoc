@@ -1,8 +1,10 @@
 class ImagesController < ApplicationController
+  def index 
+    @images = Image.all.order(created_at: :desc)
+  end
+  
   def new
     @image = Image.new
-    # @images = Image.
-    @show_image = Image.all.order(create_at: :desc)
   end
 
   def create

@@ -15,9 +15,8 @@ class ImageTest < ActiveSupport::TestCase
   end
 
   def test_link__invalid_if_link_is_not_image
-    image = Image.new(title:'new image', link: 'something.xxx')
+    image = Image.new(title: 'new image', link: 'something.xxx')
 
     refute_predicate image, :valid?
   end
-
 end
