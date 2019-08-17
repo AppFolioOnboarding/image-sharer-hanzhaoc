@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   resources :images
 
-  root 'images#new'
+  root 'images#index'
 end
