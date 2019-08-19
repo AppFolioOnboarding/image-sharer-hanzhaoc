@@ -38,6 +38,7 @@ group :development do
   gem 'pronto-rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'bootstrap', '~> 4.3.1'
 end
 
 group :production do
