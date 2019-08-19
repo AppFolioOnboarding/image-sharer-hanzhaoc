@@ -1,20 +1,19 @@
-<h3>Listing images</h3>
- 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Link</th>
-    <th></th>
-  </tr>
- 
+<div class = 'row'>
+  <div class = 'col'><h3>Listing images</h3></div>
+</div>
+<div class = 'row gallery'>
   <% @images.each do |i| %>
-    <tr>
-      <td><%= i.title %></td>
-      <td><%= i.link %></td>
-      <td><%= link_to 'Show', image_path(i) %></td>
-      <td><%= image_tag(i.link, class: "gallery_item") %></td>
-    </tr>
+    <div class = 'col-4 gallery__card'>
+      <div class = 'card gallary__card' >
+        <%= image_tag(i.link, class: "card-img-top", alt: 'Image Preview') %>
+        <div class = 'card-body'>
+          <h5 class = 'card-title'><%= i.title %></h5>
+          <p>Link: <%= i.link %></p>
+          <%= link_to 'Show', image_path(i), class:"btn btn-primary" %>
+        </div>
+      </div>
+    </div>
   <% end %>
-</table>
+</div>
 
 <%= link_to 'Add image', new_image_path%>

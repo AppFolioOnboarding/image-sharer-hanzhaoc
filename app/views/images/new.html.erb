@@ -1,6 +1,9 @@
 <h3>New Image</h3>
 
 <% if @image.errors.any? %>
+  <%= @image.errors.inspect %>
+<% end %>
+<% if @image.errors.any? %>
   <div id="error_explanation">
     <h5>
       <%= pluralize(@image.errors.count, "error") %> prohibited
