@@ -20,8 +20,10 @@ gem 'jquery-rails'
 gem 'webpacker', '~> 4'
 
 group :development, :test do
+  gem 'bootstrap', '~> 4.3.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'simple_form'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 end
@@ -34,8 +36,6 @@ group :development do
   gem 'pronto-rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'bootstrap', '~> 4.3.1'
-  gem 'simple_form'
 end
 
 group :production do
