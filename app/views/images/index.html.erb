@@ -3,7 +3,7 @@
 </div>
 <div class = 'row gallery'>
   <% @images.each do |i| %>
-    <div class = 'col-4 gallery__card'>
+    <div class = 'col-lg-4 col-md-4 col-sm-12 gallery__card'>
       <div class = 'card gallary__card' >
         <%= image_tag(i.link, class: "card-img-top", alt: 'Image Preview') %>
         <div class = 'card-body'>
