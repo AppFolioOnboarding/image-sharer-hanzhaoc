@@ -7,5 +7,6 @@
 <%= simple_form_for(@image) do |form| %>
   <%= form.input(:title) %>
   <%= form.input(:link) %>
+  <%= form.input(:tag_list, placeholder: 'Please use comma to split tags') %>
   <%= form.button(:submit) %>
 <% end %>
