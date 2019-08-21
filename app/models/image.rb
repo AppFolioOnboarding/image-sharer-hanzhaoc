@@ -4,4 +4,5 @@ class Image < ApplicationRecord
     with: /\.(gif|jpg|jpeg|tiff|png)/,
     message: 'Only allows image format.'
   }
+  acts_as_taggable_on :tags
 end
