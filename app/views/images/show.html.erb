@@ -2,7 +2,7 @@
   <strong>Title:</strong>
   <%= @image.title %>
 </p>
- 
+
 <p>
   <strong>Link:</strong>
   <%= @image.link %>
@@ -10,4 +10,11 @@
 
 <p>
   <%= image_tag @image.link %>
+</p>
+
+<p>
+  tags:
+  <% @image.tag_list.each do |tag|%>
+    <span> | <%= tag %> | </span>
+  <% end %>
 </p>
