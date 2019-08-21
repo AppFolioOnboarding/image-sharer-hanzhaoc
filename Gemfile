@@ -19,6 +19,8 @@ gem 'jquery-rails'
 
 gem 'webpacker', '~> 4'
 
+gem 'acts-as-taggable-on', '~> 6.0'
+
 group :development, :test do
   gem 'bootstrap', '~> 4.3.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
