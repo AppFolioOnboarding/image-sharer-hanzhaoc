@@ -34,4 +34,30 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
       post images_path, params: { image: params }
     end
   end
+
+  test 'create with tag success' do
+    assert_difference('Image.count', 1) do
+      params = { title: 'A dog', link: 'xxx.jpg', tag_list: 'tag1' }
+      post images_path, params: { image: params }
+    end
+  end
+
+  test 'create with multiple tag success' do
+    assert_difference('Image.count', 1) do
+      params = { title: 'A dog', link: 'xxx.jpg', tag_list: 'tag1, tag2' }
+      post images_path, params: { image: params }
+    end
+  end
+
+  test 'create with tag show tag in show' do
+    params = { title: 'A dog', link: 'xxx.jpg', tag_list: 'tag1' }
+    post images_path, params: { image: params }
+    assert_equal ['tag1'], Image.last.tag_list
+  end
+
+  test 'create with 2 tag show 2 tag in show' do
+    params = { title: 'A dog', link: 'xxx.jpg', tag_list: 'tag1, tag2' }
+    post images_path, params: { image: params }
+    assert_equal %w[tag1 tag2], Image.last.tag_list
+  end
 end
