@@ -24,6 +24,7 @@
             <% end %>
           </p>
           <%= link_to 'Show', image_path(i), class:"btn btn-primary" %>
+          <%= link_to 'Delete', image_path(i), method: :delete, data:{ confirm: 'Are you sure to delete this image?'}, class: 'btn btn-danger' %>
         </div>
       </div>
     </div>
