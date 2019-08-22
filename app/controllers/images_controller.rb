@@ -3,6 +3,7 @@ class ImagesController < ApplicationController
     tag_names = list_tag_names
     tag = params[:tag]
     @images = list_images_with_tag(tag, tag_names)
+    flash.now.alert = 'Tag not exist - list all images' unless tag_names.include?(tag)
   end
 
   def new
