@@ -14,7 +14,7 @@
 
 <p>
   tags:
-  <% @image.tag_list.each do |tag|%>
-    <span> | <%= tag %> | </span>
+  <% @image.tags.each do |tag|%>
+    <%= link_to tag.name, images_path(tag: tag.name), class:'badge badge-success' %>
   <% end %>
 </p>
