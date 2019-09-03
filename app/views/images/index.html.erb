@@ -1,6 +1,14 @@
 <div class = 'row'>
   <div class = 'col'><h3>Listing images</h3></div>
 </div>
+<div class = 'row'>
+  <div class = 'col'>
+    <h5>Tags</h5>
+    <% ActsAsTaggableOn::Tag.all.each do |tag| %>
+      <%= link_to tag.name, images_path(tag: tag.name), class:'badge badge-success' %>
+    <% end %>
+  </div>
+</div>
 <div class = 'row gallery'>
   <% @images.each do |i| %>
     <div class = 'col-lg-4 col-md-4 col-sm-12 gallery__card'>
@@ -11,8 +19,8 @@
           <p>Link: <%= i.link %></p>
           <p>
             Tags:
-            <% i.tag_list.each do |tag| %>
-              <span class='badge badge-primary'> <%= tag %></span>
+            <% i.tags.each do |tag| %>
+              <%= link_to tag.name, images_path(tag: tag.name), class:'badge badge-success' %>
             <% end %>
           </p>
           <%= link_to 'Show', image_path(i), class:"btn btn-primary" %>
