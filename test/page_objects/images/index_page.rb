@@ -4,7 +4,7 @@ module PageObjects
       path :images
 
       element :alert, locator: '.alert-primary'
-      collection :images, locator: '.gallery', item_locator: '.gallery__card', contains: ImageCard do
+      collection :images, locator: '.gallery', item_locator: '.gallery__card', contains: Images::ImageCard do
         def view!
           node.click_on('Show')
           stale!
