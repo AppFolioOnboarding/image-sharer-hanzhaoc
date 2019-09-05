@@ -4,9 +4,22 @@
   </div>
 </div>
 
+
+
+
 <%= simple_form_for(@image) do |form| %>
-  <%= form.input(:title) %>
-  <%= form.input(:link) %>
-  <%= form.input(:tag_list, placeholder: 'Please use comma to split tags') %>
+  <%= form.input(:title, input_html:{id:'title'})%>
+  <%= form.input(:link, input_html:{id:'link'}) %>
+  <%= form.input(:tag_list, placeholder: 'Please use comma to split tags',input_html:{id:'tag_list'}, value:  @image.tag_list.join(", ")) %>
   <%= form.button(:submit) %>
 <% end %>
+
+<% heading = capture do %>
+   <span class="badge badge-secondary">Show me something here</span>
+<% end %>
+
+<%# content_for :heading do %>
+<!--  <span class="badge badge-secondary">Show me something here</span>-->
+<%# end %>
+
+<%= render 'layouts/footer', heading: heading %>

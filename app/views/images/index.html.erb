@@ -2,7 +2,7 @@
   <div class = 'col'><h3>Listing images</h3></div>
 </div>
 <div class = 'row'>
-  <div class = 'col'>
+  <div class = 'col' id = 'tags'>
     <h5>Tags</h5>
     <% ActsAsTaggableOn::Tag.all.each do |tag| %>
       <%= link_to tag.name, images_path(tag: tag.name), class:'badge badge-success' %>
@@ -19,6 +19,8 @@
           <p>Link: <%= i.link %></p>
           <p>
             Tags:
+          </p>
+          <p class = 'tags'>
             <% i.tags.each do |tag| %>
               <%= link_to tag.name, images_path(tag: tag.name), class:'badge badge-success' %>
             <% end %>

@@ -1,20 +1,22 @@
-<p>
+<p id = 'title'>
   <strong>Title:</strong>
   <%= @image.title %>
 </p>
 
-<p>
+<p id = 'link' >
   <strong>Link:</strong>
   <%= @image.link %>
 </p>
 
-<p>
+<p id = 'image'>
   <%= image_tag @image.link %>
 </p>
 
-<p>
-  tags:
+<p id = 'tags' class = 'tags'>
   <% @image.tags.each do |tag|%>
-    <%= link_to tag.name, images_path(tag: tag.name), class:'badge badge-success' %>
+    <%= link_to tag.name, images_path(tag: tag.name), class:'tag badge badge-success' %>
   <% end %>
 </p>
+<br>
+<%= link_to 'Go Index', images_path, class: 'btn btn-primary', id: 'index'%>
+<%= link_to 'Delete', image_path(@image), method: :delete, data:{ confirm: 'Are you sure to delete this image?'}, class: 'btn btn-danger', id: 'delete' %>

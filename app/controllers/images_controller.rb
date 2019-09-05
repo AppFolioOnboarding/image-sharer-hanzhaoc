@@ -8,6 +8,7 @@ class ImagesController < ApplicationController
 
   def new
     @image = Image.new
+    render :new
   end
 
   def create
@@ -15,6 +16,7 @@ class ImagesController < ApplicationController
     @image.tag_list.add('all') unless @image.tag_list.include?('all')
     if @image.save
       redirect_to @image
+      flash[:notice] = 'You have successfully added an image.'
     else
       render :new
     end
@@ -27,7 +29,7 @@ class ImagesController < ApplicationController
   def destroy
     @image = Image.find(params[:id])
     @image.destroy
-
+    flash[:notice] = 'You have successfully deleted the image.'
     redirect_to(images_path)
   end
 
