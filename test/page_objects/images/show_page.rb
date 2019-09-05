@@ -6,7 +6,7 @@ module PageObjects
       element :alert, locator: '.alert-primary'
       element :title, locator: '#title'
       element :link, locator: '#link'
-      collection :show_tags, locator:'.tags' do
+      collection :show_tags, locator: '.tags' do
       end
       element :back_button, locator: '#index'
       element :delete_button, locator: '#delete'
@@ -16,18 +16,16 @@ module PageObjects
       end
 
       def tags
-        self.show_tags.map do |t|
-          t.text
-        end
+        show_tags.map(&:text)
       end
 
       def delete
-        self.delete_button.node.click
+        delete_button.node.click
         yield node.driver.browser.switch_to.alert
       end
 
       def delete_and_confirm!
-        self.delete_button.node.click
+        delete_button.node.click
         alert = node.driver.browser.switch_to.alert
         alert.accept
         stale!

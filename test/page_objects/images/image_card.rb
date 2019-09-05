@@ -3,7 +3,7 @@ module PageObjects
     class ImageCard < AePageObjects::Element
       collection :tag_list, locator: '.tags', item_locator: '.badge' do
         element :tag
-    end
+      end
       def url
         node.find('img')[:src]
       end

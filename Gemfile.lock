@@ -46,7 +46,7 @@ GEM
       activerecord (~> 5.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    ae_page_objects (4.1.0)
+    ae_page_objects (4.2.0)
       capybara (~> 3.0)
     arel (9.0.0)
     ast (2.4.0)
@@ -203,6 +203,9 @@ GEM
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
+    simple_form (4.0.1)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -245,9 +248,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (~> 6.0)
-  bootstrap (~> 4.3.1)
   ae_page_objects
-  acts-as-taggable-on (~> 6.0)
   bootstrap (~> 4.3.1)
   byebug
   capybara

@@ -25,10 +25,4 @@ class ImageTest < ActiveSupport::TestCase
 
     assert_predicate image, :valid?
   end
-
-  def test_tag__add_success
-    image = Image.new(title: 'new image', link: 'something.jpg', tag_list: %w[tag1 tag2])
-
-    assert_predicate image, :valid?
-  end
 end

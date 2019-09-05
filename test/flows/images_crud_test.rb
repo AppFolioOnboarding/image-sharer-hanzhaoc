@@ -4,15 +4,14 @@ class ImagesCrudTest < FlowTestCase
   test 'add an image' do
     images_index_page = PageObjects::Images::IndexPage.visit
 
-
     new_image_page = images_index_page.add_new_image!
 
-    tags = ['foo', 'bar']
+    tags = %w[foo bar]
     new_image_page = new_image_page.create_image!(
       url: 'invalid',
       tags: tags.join(', ')
     ).as_a(PageObjects::Images::NewPage)
-    assert_equal "Link Only allows image format.", new_image_page.image.f2.link_error_message.text
+    assert_equal 'Link Only allows image format.', new_image_page.image.f2.link_error_message.text
 
     image_url = 'https://media3.giphy.com/media/EldfH1VJdbrwY/200.gif'
     new_image_page.image.f2.link.set(image_url)
@@ -31,8 +30,8 @@ class ImagesCrudTest < FlowTestCase
     cute_puppy_url = 'http://ghk.h-cdn.co/assets/16/09/980x490/landscape-1457107485-gettyimages-512366437.jpg'
     ugly_cat_url = 'http://www.ugly-cat.com/ugly-cats/uglycat041.jpg'
     Image.create!([
-      { title:'test1', link: cute_puppy_url, tag_list: 'puppy, cute' },
-      { title:'test2',link: ugly_cat_url, tag_list: 'cat, ugly' }
+      { title: 'test1', link: cute_puppy_url, tag_list: 'puppy, cute' },
+      { title: 'test2', link: ugly_cat_url, tag_list: 'cat, ugly' }
     ])
 
     images_index_page = PageObjects::Images::IndexPage.visit
@@ -72,7 +71,7 @@ class ImagesCrudTest < FlowTestCase
 
     images_index_page = PageObjects::Images::IndexPage.visit
     images.each do |image|
-      assert images_index_page.showing_image?(url: image[:link], tags:image[:tag_list].split(', '))
+      assert images_index_page.showing_image?(url: image[:link], tags: image[:tag_list].split(', '))
     end
 
     images_index_page = images_index_page.images[1].click_tag!('cute')
